@@ -11,10 +11,16 @@ import lombok.*;
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
 public class Product {
+
+    public Product(RequestProduct requestProduct){
+        this.name = requestProduct.name();
+        this.price_in_cents = requestProduct.price_in_cents();
+    }
+
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
     private String name;
 
-    private Number prince_in_cents;
+    private Integer price_in_cents;
 }
