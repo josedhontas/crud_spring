@@ -17,6 +17,7 @@ public class Product {
     public Product(RequestProduct requestProduct){
         this.name = requestProduct.name();
         this.price_in_cents = requestProduct.price_in_cents();
+        this.active = true;
     }
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)
@@ -25,4 +26,6 @@ public class Product {
     private String name;
 
     private Integer price_in_cents;
+
+    private Boolean active;
 }
