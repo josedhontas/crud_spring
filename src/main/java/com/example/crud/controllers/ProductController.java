@@ -41,7 +41,7 @@ public class ProductController {
             return ResponseEntity.ok(product);
         }
         else{
-            return ResponseEntity.notFound().build();
+            throw new EntityNotFoundException();
         }
     }
 
@@ -55,7 +55,7 @@ public class ProductController {
             return ResponseEntity.noContent().build();
         }
         else{
-            return ResponseEntity.notFound().build();
+            throw new EntityNotFoundException();
         }
     }
 }
