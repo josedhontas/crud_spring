@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class RequestsExceptionHandler {
     @ExceptionHandler(EntityNotFoundException.class)
     public ResponseEntity threat404(){  //dado nao encontrado
+        //var response = new ExceptionDTO("Dado nao encontrado");
         return ResponseEntity.badRequest().body("Dado nao encontrado");
     }
 }
